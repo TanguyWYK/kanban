@@ -26,10 +26,16 @@ export interface BudgetModel {
   date_creation: string;
 }
 
-export interface SingleModel {
+export interface SingleStringModel {
   id: number;
   date_creation: string;
   value: string;
+}
+
+export interface SingleNumberModel {
+  id: number;
+  date_creation: string;
+  value: number;
 }
 
 export interface LogoModel {
@@ -68,8 +74,10 @@ export interface ProjectModel {
     logo: LogoModel;
     resources: RessourceModel[];
     budget: BudgetModel[];
-    date_start: SingleModel[];
-    date_end: SingleModel[];
-    comment: SingleModel[];
+    date_start: SingleStringModel[];
+    date_end: SingleStringModel[];
+    comment: SingleStringModel[];
+    progress: SingleNumberModel[];
+    expenses: SingleNumberModel[];
   };
 }

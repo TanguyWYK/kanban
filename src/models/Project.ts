@@ -13,4 +13,6 @@ export interface Project {
   state: string;
   feeling: string;
   lastUpdate?: string;
+  progress?: number;
+  expenses?: number;
 }

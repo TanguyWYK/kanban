@@ -38,3 +38,7 @@ p {
   right: 0;
   font-size: 10px;
 }
+
+.comment {
+  font-style: italic;
+}
