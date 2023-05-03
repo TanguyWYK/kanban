@@ -1,0 +1,8 @@
+.weather {
+  width: 100px;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+}
