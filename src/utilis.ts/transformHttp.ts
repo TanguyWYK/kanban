@@ -45,7 +45,7 @@ const calculateLastUpdate = (project: ProjectModel): string | undefined => {
   if (isUpdated) {
     let dates: string[] = [];
     attributesWatchedForUpdate.forEach((key: AttributesWatchedForUpdate) =>
-      project.attributes[key].map((attribute: any) =>
+      project.attributes[key].map((attribute) =>
         dates.push(attribute.date_creation)
       )
     );
@@ -123,11 +123,10 @@ const transformSfeirianPayload = (
 };
 
 const transformCompanyPayload = (payload: CompanyModel): Company => {
-  const company: any = payload.data;
   let result: Company = {
-    id: company.id,
-    name: company.attributes.name,
-    logoUrl: URL_MEDIA + company.attributes.logo.data.attributes.url,
+    id: payload.data.id,
+    name: payload.data.attributes.name,
+    logoUrl: URL_MEDIA + payload.data.attributes.logo.data.attributes.url,
   };
   return result;
 };

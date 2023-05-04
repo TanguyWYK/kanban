@@ -9,9 +9,13 @@ import { ProjectService } from './api/services/ProjectService';
 function App() {
   const [projects, setProjects]: [Project[], Function] = useState([]);
   useEffect(() => {
-    ProjectService.getAllProjects().then((projectsResponse) => {
-      setProjects(transformProjectsPayload(projectsResponse));
-    });
+    ProjectService.getAllProjects()
+      .then((projectsResponse) => {
+        setProjects(transformProjectsPayload(projectsResponse));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
   return (
     <div className="board">
