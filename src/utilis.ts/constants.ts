@@ -1,5 +1,5 @@
 export const ROOT = 'http://localhost:1337';
-export const URL_API = ROOT+'/api';
+export const URL_API = ROOT + '/api';
 export const URL_MEDIA = ROOT;
 
 export enum ImageSrc {

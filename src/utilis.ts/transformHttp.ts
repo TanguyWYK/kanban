@@ -35,7 +35,7 @@ const calculateLastUpdate = (project: ProjectModel): string | undefined => {
     'expenses',
   ] as const;
 
-  type AttributesWatchedForUpdate = typeof attributesWatchedForUpdate[number];
+  type AttributesWatchedForUpdate = (typeof attributesWatchedForUpdate)[number];
 
   let isUpdated = false;
   attributesWatchedForUpdate.forEach(
