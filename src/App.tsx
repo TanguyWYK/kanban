@@ -10,7 +10,7 @@ function App() {
   const [projects, setProjects]: [Project[], Function] = useState([]);
   useEffect(() => {
     ProjectService.getAllProjects().then((projectsResponse) => {
-      setProjects(transformProjectsPayload(projectsResponse.data));
+      setProjects(transformProjectsPayload(projectsResponse));
     });
   }, []);
   return (

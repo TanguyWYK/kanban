@@ -58,7 +58,7 @@ const ProjectCard = (props: ProjectCardProps) => {
         {props.project.progress && (
           <p>Avancement global : {props.project.progress}%</p>
         )}
-        {props.project.expenses && (
+        {props.project.expenses && props.project.budget && (
           <p>
             Budget :
             {' ' +

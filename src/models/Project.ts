@@ -5,7 +5,7 @@ export interface Project {
   id: number;
   name: string;
   company: Company;
-  budget: number;
+  budget?: number;
   dateStart?: string;
   dateEnd?: string;
   comment?: string;

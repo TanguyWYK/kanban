@@ -1,8 +1,8 @@
-export interface RessourceModel {
+export interface ResourceModel {
   id: number;
-  daily_pricing: number;
+  daily_pricing?: number;
   title: string;
-  sfeirian: SfeirianModel;
+  sfeirian?: SfeirianModel;
 }
 
 export interface SfeirianModel {
@@ -72,7 +72,7 @@ export interface ProjectModel {
     state: string;
     company: CompanyModel;
     logo: LogoModel;
-    resources: RessourceModel[];
+    resources: ResourceModel[];
     budget: BudgetModel[];
     date_start: SingleStringModel[];
     date_end: SingleStringModel[];
@@ -80,4 +80,11 @@ export interface ProjectModel {
     progress: SingleNumberModel[];
     expenses: SingleNumberModel[];
   };
+}
+
+export interface GetAllProjectsPayload {
+  data: {
+    data: ProjectModel[];
+  };
+  status: number;
 }
