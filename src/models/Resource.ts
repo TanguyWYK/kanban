@@ -4,5 +4,5 @@ export interface Resource {
   id: number;
   title: string;
   dailyPricing?: number;
-  sfeirian ?: Sfeirian;
+  sfeirian?: Sfeirian;
 }

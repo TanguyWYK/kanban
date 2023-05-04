@@ -1,12 +1,13 @@
-import './App.css';
-import KanbanTitles from './components/KanbanTitles';
-import { transformProjectsPayload } from './utilis.ts/transformHttp';
+import './KanbanProjects.css';
+import KanbanTitles from '../components/KanbanTitles';
+import { transformProjectsPayload } from '../utilis.ts/transformHttp';
 import { useEffect, useState } from 'react';
-import { Project } from './models/Project';
-import KanbanRow from './components/KanbanRow';
-import { ProjectService } from './api/services/ProjectService';
+import { Project } from '../models/Project';
+import KanbanRow from '../components/KanbanRow';
+import { ProjectService } from '../api/services/ProjectService';
+import { Outlet } from 'react-router-dom';
 
-function App() {
+function KanbanProjects() {
   const [projects, setProjects]: [Project[], Function] = useState([]);
   useEffect(() => {
     ProjectService.getAllProjects()
@@ -19,6 +20,7 @@ function App() {
   }, []);
   return (
     <div className="board">
+      <Outlet></Outlet>
       <KanbanTitles></KanbanTitles>
       <KanbanRow
         weather="sunny"
@@ -42,4 +44,4 @@ function App() {
   );
 }
 
-export default App;
+export default KanbanProjects;

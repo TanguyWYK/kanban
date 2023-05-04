@@ -7,6 +7,7 @@ import {
   convertDatetimeToDateFr,
 } from '../utilis.ts/formatters';
 import { Resource } from '../models/Resource';
+import { Link } from 'react-router-dom';
 
 type ProjectCardProps = {
   project: Project;
@@ -37,7 +38,7 @@ const concatResources = (resources: Resource[]): string => {
 
 const ProjectCard = (props: ProjectCardProps) => {
   return (
-    <div className={classes.project}>
+    <Link to={`/projects/${props.project.id}`} className={classes.project}>
       <div>
         <h3>
           {props.project.company.name} - {props.project.name}
@@ -78,7 +79,7 @@ const ProjectCard = (props: ProjectCardProps) => {
           MAJ : {convertDatetimeToDateFr(props.project.lastUpdate)}
         </p>
       )}
-    </div>
+    </Link>
   );
 };
 

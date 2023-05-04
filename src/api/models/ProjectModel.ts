@@ -88,3 +88,10 @@ export interface GetAllProjectsPayload {
   };
   status: number;
 }
+
+export interface GetProjectPayload {
+  data: {
+    data: ProjectModel;
+  };
+  status: number;
+}

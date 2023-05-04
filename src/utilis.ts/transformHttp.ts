@@ -57,7 +57,7 @@ const calculateLastUpdate = (project: ProjectModel): string | undefined => {
   return lastUpdate;
 };
 
-const transformProjectPayload = (project: ProjectModel): Project => {
+export const transformProjectPayload = (project: ProjectModel): Project => {
   const company: Company = transformCompanyPayload(project.attributes.company);
   const resources: Resource[] = transformResourcePayload(
     project.attributes.resources
