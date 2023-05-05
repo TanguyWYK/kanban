@@ -1,4 +1,4 @@
-import './KanbanProjects.css';
+import './Projects.css';
 import KanbanTitles from '../components/KanbanTitles';
 import { transformProjectsPayload } from '../utilis.ts/transformHttp';
 import { useEffect, useState } from 'react';
@@ -7,7 +7,7 @@ import KanbanRow from '../components/KanbanRow';
 import { ProjectService } from '../api/services/ProjectService';
 import { Outlet } from 'react-router-dom';
 
-function KanbanProjects() {
+function Projects() {
   const [projects, setProjects]: [Project[], Function] = useState([]);
   useEffect(() => {
     ProjectService.getAllProjects()
@@ -44,4 +44,4 @@ function KanbanProjects() {
   );
 }
 
-export default KanbanProjects;
+export default Projects;

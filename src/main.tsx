@@ -6,7 +6,7 @@ import './index.css';
 import ProjectDetails, {
   loader as projectDetailsLoader,
 } from './routes/ProjectDetails';
-import KanbanProjects from './routes/KanbanProjects';
+import Projects from './routes/Projects';
 
 const router = createBrowserRouter([
   {
@@ -15,14 +15,12 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/projects',
-        element: <KanbanProjects></KanbanProjects>,
-        children: [
-          {
-            path: '/projects/:id',
-            element: <ProjectDetails></ProjectDetails>,
-            loader: projectDetailsLoader,
-          },
-        ],
+        element: <Projects></Projects>,
+      },
+      {
+        path: '/projects/:id',
+        element: <ProjectDetails></ProjectDetails>,
+        loader: projectDetailsLoader,
       },
     ],
   },

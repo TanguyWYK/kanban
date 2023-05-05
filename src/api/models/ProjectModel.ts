@@ -28,14 +28,14 @@ export interface BudgetModel {
 
 export interface SingleStringModel {
   id: number;
-  date_creation: string;
-  value: string;
+  date_creation: string ;
+  value: string | undefined;
 }
 
 export interface SingleNumberModel {
   id: number;
   date_creation: string;
-  value: number;
+  value: number | undefined;
 }
 
 export interface LogoModel {

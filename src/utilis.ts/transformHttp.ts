@@ -7,6 +7,7 @@ import {
 } from '../api/models/ProjectModel';
 import { Company } from '../models/Company';
 import { Project } from '../models/Project';
+import { ProjectDetails } from '../models/ProjectDetails';
 import { Resource } from '../models/Resource';
 import { Sfeirian } from '../models/Sfeirian';
 import { URL_MEDIA } from './constants';
@@ -93,6 +94,30 @@ export const transformProjectPayload = (project: ProjectModel): Project => {
           .value
       : undefined,
   };
+  return result;
+};
+
+export const transformProjectDetailsPayload = (project: ProjectModel): ProjectDetails => {
+  const company: Company = transformCompanyPayload(project.attributes.company);
+  const resources: Resource[] = transformResourcePayload(
+    project.attributes.resources
+  );
+  let result: ProjectDetails = {
+    id: project.id,
+    name: project.attributes.name,
+    company: company,
+    budget: project.attributes.budget,
+    dateStart: project.attributes.date_start,
+    dateEnd: project.attributes.date_end,
+    comment: project.attributes.comment,
+    resources: resources,
+    state: project.attributes.state,
+    feeling: project.attributes.feeling,
+    lastUpdate: calculateLastUpdate(project),
+    progress: project.attributes.progress,
+    expenses: project.attributes.expenses,
+  };
+  console.log(result);
   return result;
 };
 
