@@ -10,8 +10,20 @@
   overflow: hidden;
   color: #000;
   user-select: none;
+  position: relative;
 }
 
 .attributes {
   display: flex;
+}
+
+.logo {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  max-width: 300px;
+}
+
+.projectName {
+  font-size: 2rem;
 }

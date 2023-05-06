@@ -59,9 +59,9 @@ const ProjectDetails = () => {
           <div>
             <div>
               <h2>{project.company.name}</h2>
-              <h3>{project.name}</h3>
+              <h3 className={classes.projectName}>{project.name}</h3>
             </div>
-            <img src={project.company.logoUrl} />
+            <img className={classes.logo} src={project.company.logoUrl} />
           </div>
           <div className="attributes">
             <ProjectAttribute

@@ -15,8 +15,7 @@ export const formatNumberWithThousandSeparator = (
   }
 
   let intPart =
-    thousandMultiple.length > 0 ? rest + ' ' + thousandMultiple.join(' ') : '0';
-
+    thousandMultiple.length >= 0 ? rest + ' ' + thousandMultiple.join(' ') : '0';
   return withDecimal ? intPart + '.' + decimalPart : intPart;
 };
 
