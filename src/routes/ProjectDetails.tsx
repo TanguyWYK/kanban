@@ -89,7 +89,9 @@ const ProjectDetails = () => {
               unit="%"
               values={convertExpensesToBudget(
                 project.expenses,
-                project.budget[project.budget.length - 1].value
+                project.budget.length > 0
+                  ? project.budget[project.budget.length - 1].value
+                  : undefined
               )}></ProjectAttribute>
           </div>
           <Resources resources={project.resources}></Resources>
