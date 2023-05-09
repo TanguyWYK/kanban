@@ -15,6 +15,7 @@ import {
   formatNumberWithThousandSeparator,
 } from '../utilis.ts/formatters';
 import Resources from '../components/Resources';
+import { ImageSrc } from '../utilis.ts/constants';
 
 const ProjectDetails = () => {
   const project = useLoaderData() as ProjectDetailsModel;
@@ -62,6 +63,9 @@ const ProjectDetails = () => {
               <h3 className={classes.projectName}>{project.name}</h3>
             </div>
             <img className={classes.logo} src={project.company.logoUrl} />
+          </div>
+          <div className={classes.weather}>
+            <img src={ImageSrc[project.feeling]} />
           </div>
           <div className="attributes">
             <ProjectAttribute
